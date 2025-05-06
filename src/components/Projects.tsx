@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from './Layout';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,23 +15,16 @@ const Projects = () => {
         'Improved record-keeping efficiency by implementing searchable digital patient records with customizable templates'
       ]
     },
+     
     {
       title: 'Laboratory E-commerce Platform',
-      description: 'A specialized e-commerce solution for laboratory equipment and supplies with inventory management.',
-      stack: ['Next.js', 'GraphQL', 'PostgreSQL', 'Apollo'],
+      description: 'A professional website for a laboratory specializing in medical analysis.',
+      stack: ['PHP', 'WordPress'],
       achievements: [
-        'Implemented real-time inventory tracking that reduced stockouts by 30%',
-        'Developed a custom recommendation engine based on purchase patterns, increasing average order value by 25%'
-      ]
-    },
-    {
-      title: 'Personal Finance Dashboard',
-      description: 'An interactive dashboard for tracking personal finances, investments, and budget planning.',
-      stack: ['React', 'Node.js', 'MongoDB', 'Express', 'Chart.js'],
-      achievements: [
-        'Created customizable visualization tools that helped users identify spending patterns',
-        'Integrated with multiple banking APIs to provide real-time transaction updates and balance information'
-      ]
+        'Developed a user-friendly interface for booking appointments online',
+        'Optimized website performance and ensured cross-browser compatibility'
+      ],
+      demoLink: 'https://ideallabo.dz/'
     }
   ];
 
@@ -70,18 +62,28 @@ const Projects = () => {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end gap-2">
-                <button 
-                  className="text-portfolio-blue hover:text-portfolio-darkBlue"
-                  aria-label={`View ${project.title} demo`}
-                >
-                  <ExternalLink className="h-5 w-5" />
-                </button>
-                <button 
-                  className="text-portfolio-blue hover:text-portfolio-darkBlue"
-                  aria-label={`View ${project.title} code on GitHub`}
-                >
-                  <Github className="h-5 w-5" />
-                </button>
+                {project.demoLink && (
+                  <a 
+                    href={project.demoLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-portfolio-blue hover:text-portfolio-darkBlue"
+                    aria-label={`View ${project.title} demo`}
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
+                )}
+                {project.codeLink && (
+                  <a 
+                    href={project.codeLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-portfolio-blue hover:text-portfolio-darkBlue"
+                    aria-label={`View ${project.title} code on GitHub`}
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                )}
               </CardFooter>
             </Card>
           ))}
