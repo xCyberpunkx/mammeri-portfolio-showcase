@@ -13,7 +13,8 @@ const Projects = () => {
       achievements: [
         'Reduced appointment scheduling time by 40% through an intuitive calendar interface',
         'Improved record-keeping efficiency by implementing searchable digital patient records with customizable templates'
-      ]
+      ],
+      demoLink: 'https://ramdani.vercel.app/'
     },
      
     {
